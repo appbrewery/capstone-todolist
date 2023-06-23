@@ -23,7 +23,7 @@ app.get("/", function (req, res) {
     day: "numeric",
     month: "long",
   };
-  const day = today.toLocaleDateString("en-US", options);
+  const day = now.toLocaleDateString("en-US", options);
 
   res.render("index.ejs", {
     listTitle: day,
