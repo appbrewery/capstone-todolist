@@ -9,9 +9,15 @@ app.use(express.static("public"));
 
 let items = [];
 let workItems = [];
+let lastDate;
 
 app.get("/", function (req, res) {
-  const today = new Date();
+  const now = new Date();
+  if (lastDate && now.getDate() !== lastDate.getDate()) {
+    items = [];
+    workItems = [];
+  }
+  lastDate = new Date();
   const options = {
     weekday: "long",
     day: "numeric",
