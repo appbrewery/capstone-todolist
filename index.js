@@ -7,6 +7,8 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+console.log("Priyanshu raj");
+
 let items = [];
 let workItems = [];
 let lastDate;
